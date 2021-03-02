@@ -14,12 +14,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: DevOps with Docker
-email: jami.kousa@helsinki.fi
+email: eero.oittinen@gmai.com
 description: >- # this means to ignore newlines until "baseurl:"
-  University of Helsinki DevOps with Docker course.
+  DevOps GitHub Actions + Docker + Heroku practice
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://docker-hy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  jakousa
+url: "https://jekyll-devops-eero.herokuapp.com/" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  EeroOit
 
 # Build settings
 markdown: kramdown
