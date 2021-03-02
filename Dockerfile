@@ -1,10 +1,14 @@
 FROM jekyll/jekyll:3.8.3 as build-stage
 
+ARG PORT
+
 WORKDIR /tmp
 
 COPY Gemfile* ./
 
 RUN bundle install
+
+RUN echo $PORT
 
 WORKDIR /usr/src/app
 
@@ -14,10 +18,10 @@ RUN chown -R jekyll .
 
 RUN jekyll build
 
-FROM node:alpine
+FROM nginx:alpine
 
-COPY --from=build-stage /usr/src/app/_site/ /usr/src/html
+COPY --from=build-stage /usr/src/app/_site/ /usr/share/nginx/html
 
-RUN npm install -g serve
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-CMD serve -l $PORT /usr/src/html
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
