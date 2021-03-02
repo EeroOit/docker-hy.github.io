@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: DevOps with Docker
-email: eero.oittinen@gmai.com
+email: eero.oittinen@student.lab.fi
 description: >- # this means to ignore newlines until "baseurl:"
   DevOps GitHub Actions + Docker + Heroku practice
 baseurl: "" # the subpath of your site, e.g. /blog
